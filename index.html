@@ -1,37 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bubble Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble Frenzy</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="main">
-        <h1 id="game-title">Bubble Frenzy</h1>
-        <div id="panel">
-            <div id="ptop">
-                <div class="elem">
-                    <h2>Hit</h4>
-                        <div id="hitnum" class="box">5</div>
-                </div>
-                <div class="elem">
-                    <h2>Timer</h4>
-                        <div id="time" class="box">60</div>
-                </div>
-                <div class="elem">
-                    <h2>Score</h4>
-                        <div id="score" class="box">0</div>
-                </div>
+
+<!-- Welcome Screen -->
+<div id="welcome-screen">
+    <h2>Welcome to Bubble Frenzy!</h2>
+    <div id="rules-box">
+        <h3>Rules:</h3>
+        <ul>
+            <li>Click the bubble with the number matching the "Hit" shown.</li>
+            <li>The suggested bubble (red border) gives +5 points.</li>
+            <li>If you find the correct bubble yourself (without suggestion), you get +10 points.</li>
+            <li>You have 60 seconds to score as high as possible!</li>
+            <li>Each 50 points, the difficulty increases!</li>
+        </ul>
+    </div>
+    <input type="text" id="player-name" placeholder="Enter your name">
+    <button id="start-btn">Start Game</button>
+</div>
+
+<!-- Pause Overlay -->
+<div id="pause-overlay">
+    <button id="resume-btn">Continue</button>
+</div>
+
+<!-- Main Game -->
+<div id="main" style="display: none;">
+    <h1 id="game-title">Bubble Frenzy</h1>
+
+    <div id="panel">
+        <div id="ptop">
+            <div class="elem">
+                <h2>Player</h2>
+                <div id="playerDisplay" class="box">Guest</div>
             </div>
-            <div id="pbtm">
+            <div class="elem">
+                <h2>Hit</h2>
+                <div id="hitnum" class="box">0</div>
+            </div>
+            <div class="elem">
+                <h2>Timer</h2>
+                <div id="time" class="box">60</div>
+            </div>
+            <div class="elem">
+                <h2>Score</h2>
+                <div id="score" class="box">0</div>
+            </div>
+            <div class="elem">
+                <h2>Highest</h2>
+                <div id="highscore" class="box">0</div>
+            </div>
+            <div class="elem">
+                <button id="pause-btn" class="control-btn">Pause</button>
+                <button id="mute-btn" class="control-btn">Mute</button>
             </div>
         </div>
 
+        <div id="pbtm"></div>
     </div>
-    <script src="script.js"></script>
-</body>
+</div>
 
+<audio id="bg-music" src="bubble game bg music.mp3" loop preload="auto"></audio>
+
+
+<script src="script.js"></script>
+</body>
 </html>
